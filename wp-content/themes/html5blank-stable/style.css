@@ -1,0 +1,26 @@
+/*******BASIC STYLES*******/
+footer, header {
+  display: none; }
+
+body {
+  font-family: sans-serif; }
+
+ul {
+  list-style-type: none; }
+  ul li {
+    cursor: pointer;
+    margin: 0px 12px; }
+
+/**TABLEAU**/
+table {
+  text-align: left;
+  width: 90%;
+  font-weight: 100; }
+  table tr, table th {
+    max-width: 62px;
+    padding: 10px; }
+  table tr:not(#tableHead) {
+    border-top: 1px solid black; }
+
+li {
+  font-size: 16px; }
