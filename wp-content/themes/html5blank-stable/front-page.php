@@ -16,98 +16,172 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-
         <div id="bodyContainer">
                 <?php ?>
-
-                <!----------------------------------------------------
-                ------------------ Homepage Hero ---------------------
-                ------------------------------------------------------>
-                <div id="heroContainer">
-                    <div class="content">
-                    </div>
+                <div id="leftNavContainer">
+                    <nav>
+                        <img id="logo" ></img>
+                        <span><a href="#About">A propos</a></span>
+                        </span><a href="#Team">Équipe</a></span>
+                        <span><a href="#Refs">Références</a></span>
+                        <span><svg id="switchIcon" onclick="toggleYellow()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388.2 381.38"><defs><style>.cls-1{isolation:isolate;}</style></defs><title>432_assets</title><g id="Composant_12_1" data-name="Composant 12 1"><g id="_" data-name=" " class="cls-1"><g class="cls-1"><path d="M385.5,191c0,108-82.13,189.12-191.63,189.12C84,380.1,1.5,299,1.5,191S83.79,1.88,193.5,1.88,385.5,83,385.5,191ZM193.87,350.28h1.88l.35-318.57-2.6,0c-92,0-161,68.22-161,159.3S101.71,350.28,193.87,350.28Z"/></g></g></g></svg></span>
+                    </nav>
                 </div>
 
-                <!----------------------------------------------------
-                ------------------ Homepage Description ---------------------
-                ------------------------------------------------------>
-                <div id="descContainer">
-                    <div class="content">
-                        <?php echo the_field('description'); ?>
+                <div id="contentContainer">
+                    <!----------------------------------------------------
+                    ------------------ Homepage Hero ---------------------
+                    ------------------------------------------------------>
+                    <div id="heroContainer">
+                        <div class="content">
+                        <?php 
+                            $image = get_field('headerhero');
+                            if( !empty( $image ) ): ?>
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
 
-                <!----------------------------------------------------
-                ------------------ Homepage Team ---------------------
-                ------------------------------------------------------>
-                    <div id="teamContainer">
-                    <div class="content">
-                        <div id="coordinates"></div>
-
-                        <!--liste !-->
-                        <ul id="teamList">
-                            <?php
-                                if( have_rows('equipe') ):
-                                    while ( have_rows('equipe') ) : the_row(); ?>
-                                    <li class="member"><?php echo the_sub_field('nom'); ?> <?php echo the_sub_field('prenom'); ?> </li>
-                            <?php
-                                endwhile;
-                                else :
-                                    // no rows found
-                                endif;
-                            ?>
-                        </ul>
-                        <!-- -->
-
+                    <!----------------------------------------------------
+                    ------------------ Homepage Description ---------------------
+                    ------------------------------------------------------>
+                    <div id="descContainer">
+                        <div class="content">
+                            <?php echo the_field('description'); ?>
+                        </div>
                     </div>
-                </div>
 
-                <!----------------------------------------------------
-                ------------------ Homepage Références ---------------
-                ------------------------------------------------------>
-                <div id="refsContainer">
-                    <div class="content">
-                        <!--tableau !-->
+                    <!----------------------------------------------------
+                    ------------------ Homepage Team ---------------------
+                    ------------------------------------------------------>
+                        <div id="teamContainer" id="Team">
+                        <div class="content">
+                            
+                            <div class="title">
+                                <h2>Équipe</h2>
+                            </div>
 
-                        <table id="refsTable">
-                                <thead >
-                                    <tr id="tableHead">
-                                        <th>Projets</th>
-                                        <th>Programme</th>
-                                        <th>Maîtrise d'ouvrage</th>
-                                        <th>Surface</th>
-                                        <th>Travaux HT</th>
-                                        <th>Livraison</th>
-                                        <th>Mission</th>
-                                        <th>Localisation</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
+                            <!--liste !-->
+                            <table id="teamList">
                                 <?php
-                                if( have_rows('references') ):
-                                    while ( have_rows('references') ) : the_row(); ?>
-                                        <th><?php echo the_sub_field('projets'); ?> </th>
-                                        <th><?php echo the_sub_field('programme'); ?> </th>
-                                        <th><?php echo the_sub_field('maitrise_douvrage'); ?> </th>
-                                        <th><?php echo the_sub_field('surface'); ?> </th>
-                                        <th><?php echo the_sub_field('travaux_ht'); ?> </th>
-                                        <th><?php echo the_sub_field('livraison'); ?> </th>
-                                        <th><?php echo the_sub_field('mission'); ?> </th>
-                                        <th><?php echo the_sub_field("localisation"); ?> </th>
-                                    <?php
-                                        endwhile;
-                                        else :
-                                            // no rows found
-                                        endif;
-                                    ?>
-                                    
-                                </tbody>
-                        </table>
-                        <!-- -->
+                                    if( have_rows('equipe') ):
+                                        while ( have_rows('equipe') ) : the_row(); ?>
+                                        <tr>
+                                            <th class="member"><?php echo the_sub_field('prenom'); ?> <?php echo the_sub_field('nom'); ?></th>
+                                            <th class="role"> <?php echo the_sub_field('role'); ?> </th>
+                                        </tr>
+                                <?php
+                                    endwhile;
+                                    else :
+                                        // no rows found
+                                    endif;
+                                ?>
+                            </table>
+                            <!-- -->
 
+                        </div>
                     </div>
+
+                    <!----------------------------------------------------
+                    ------------------ Homepage Projets ---------------
+                    ------------------------------------------------------>
+                    <div id="projContainer" id="References">
+                        <div class="content">
+                            <!--tableau !-->
+                                        
+                            <div class="title">
+                                <h2>Projets</h2>
+                            </div>
+
+                            <table id="projTable">
+                                    <thead >
+                                        <tr id="tableHead">
+                                            <th>Projets</th>
+                                            <th>Programme</th>
+                                            <th>Maîtrise d'ouvrage</th>
+                                            <th>Surface</th>
+                                            <th>Phase</th>
+                                            <th>Equipe</th>
+                               
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <?php
+                                    if( have_rows('projets') ):
+                                        while ( have_rows('projets') ) : the_row(); ?>
+                                        <tr>
+                                            <th><?php echo the_sub_field('projets'); ?> </th>
+                                            <th><?php echo the_sub_field('programme'); ?> </th>
+                                            <th><?php echo the_sub_field('maitrise_douvrage');?></th>
+                                            <th><?php echo the_sub_field('surface'); ?> </th>
+                                            <th><?php echo the_sub_field('phase'); ?> </th>
+                                            <th><?php echo the_sub_field('equipe'); ?> </th>
+                                        </tr>
+                                        <?php
+                                            endwhile;
+                                            else :
+                                                // no rows found
+                                            endif;
+                                        ?>
+                                        
+                                    </tbody>
+                            </table>
+                            <!-- -->
+
+                        </div>
+                    </div>
+                    <!--END CONTENT CONTAINER -->
+
+                     <!----------------------------------------------------
+                    ------------------ Homepage References ---------------
+                    ------------------------------------------------------>
+                    <div id="refsContainer">
+                        <div class="content">
+                            <!--tableau !-->
+                                        
+                            <div class="title">
+                                <h2>Références chez AIA Architectes</h2>
+                            </div>
+
+                            <table id="refsTable">
+                                    <thead >
+                                        <tr id="tableHead">
+                                            <th>Projets</th>
+                                            <th>Programme</th>
+                                            <th>Maîtrise d'ouvrage</th>
+                                            <th>Surface</th>
+                                            <th>Livraison</th>
+                                            <th>Mission</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <?php
+                                    if( have_rows('references') ):
+                                        while ( have_rows('references') ) : the_row(); ?>
+                                        <tr>
+                                            <th><?php echo the_sub_field('projets'); ?> </th>
+                                            <th><?php echo the_sub_field('programme'); ?> </th>
+                                            <th><?php echo the_sub_field('maitrise_douvrage');?></th>
+                                            <th><?php echo the_sub_field('surface'); ?> </th>
+                                            <th><?php echo the_sub_field('livraison'); ?> </th>
+                                            <th><?php echo the_sub_field('mission'); ?> </th>
+                                        </tr>
+                                        <?php
+                                            endwhile;
+                                            else :
+                                                // no rows found
+                                            endif;
+                                        ?>
+                                        
+                                    </tbody>
+                            </table>
+                            <!-- -->
+
+                        </div>
+                    </div>
+                    <!--END CONTENT CONTAINER -->
                 </div>
 
 
@@ -115,5 +189,13 @@
                 <?php get_footer(); ?>
 
         </div>
+        <script>
+            function toggleYellow(){
+                var target = document.getElementById("switchIcon"); 
+                var tbody = document.getElementById("bodyContainer"); 
+                target.classList.toggle("switchOn");
+                tbody.classList.toggle("yellowOn");
+            }
+        </script>
     </body>
 </html>

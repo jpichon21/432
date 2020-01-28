@@ -1,37 +1,195 @@
-/*******BASIC STYLES*******/
+/*******VARIABLES*********/
+$left-menu: 15vw;
+$color-yellow: #FFD752;
 
-footer, header{
+/**********FONTS**************/
+@font-face {
+    font-family: 'Spoof Regular';
+    src: url('fonts/Spoof/Spoof-Regular.otf') format('otf'),
+        url('fonts/Spoof/Spoof-Regular.woff') format('woff'),
+        url('fonts/Spoof/Spoof-Regular.woff2') format('woff2'),
+        url('fonts/Spoof/Spoof-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spoof Bold';
+    src: url('fonts/Spoof/Spoof-Bold.otf') format('otf'),
+        url('fonts/Spoof/Spoof-Bold.woff') format('woff'),
+        url('fonts/Spoof/Spoof-Bold.woff2') format('woff2'),
+        url('fonts/Spoof/Spoof-Bold.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spoof Bold Slanted';
+    src: url('fonts/Spoof/Spoof-BoldSlanted.otf') format('otf'),
+        url('fonts/Spoof/Spoof-BoldSlanted.woff') format('woff'),
+        url('fonts/Spoof/Spoof-BoldSlanted.woff2') format('woff2'),
+        url('fonts/Spoof/Spoof-BoldSlanted.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spoof Regular Slanted';
+    src: url('fonts/Spoof/Spoof-RegularSlanted.otf') format('otf'),
+        url('fonts/Spoof/Spoof-RegularSlanted.woff') format('woff'),
+        url('fonts/Spoof/Spoof-RegularSlanted.woff2') format('woff2'),
+        url('fonts/Spoof/Spoof-RegularSlanted.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*******BASIC STYLES*******/
+footer,
+header {
     display: none;
 }
 
-body{
-    font-family: sans-serif;
+body {
+    font-family: 'Spoof Regular', Spoof Regular, sans-serif;
 }
 
-ul{
+ul {
     list-style-type: none;
-    li{
+
+    li {
         cursor: pointer;
         margin: 0px 12px;
+    }
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 48px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/**Global layout **/
+#bodyContainer{
+    background-color: white;
+    &.yellowOn{
+        background-color: #FFD752!important;
+    }
+}
+#leftNavContainer {
+    width: 30vh;
+    min-width: 220px;
+    position: fixed;
+    height: 100vh;
+    nav {
+        transform: rotate(270deg);
+        bottom: 27px;
+        margin-top: 198px;
+        font-size: 24px;
+        padding-bottom: 106px;
+        //width: 300%;
+        display: inline-block;
+
+        span {
+            margin: 0px 22px;
+        }
+        #switchIcon {
+            width: 24px;
+            transform: rotate(90deg);
+            vertical-align: middle;
+            cursor: pointer;
+            &.switchOn{
+                transform: rotate(270deg)!important;
+            }
+        }
+    }
+}
+
+#heroContainer{
+    .content{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+#contentContainer {
+    max-width: 85vw;
+    margin-left: $left-menu;
+    padding-right: 11.2vw;
+    #descContainer {
+        .content {
+            font-size: 36px;
+        }
+    }
+    #teamContainer {
+        display: inline-block;
+        width: 100%;
+        padding: 32px 0px;
+
+        .title {
+            float: left;
+            margin-right: 8%;
+
+            h2 {
+                margin-top: -15px;
+            }
+        }
+
+        ul {
+            float: right;
+
+            li {
+                display: inline-block;
+            }
+        }
     }
 }
 
 
 
 /**TABLEAU**/
-table{
+
+#teamList {
     text-align: left;
-    width: 90%;
-    font-weight: 100;
-    tr, th{
-        max-width: 62px;
-        padding:10px;
+
+    //display: inline-block;
+    th {
+        font-size: 22px;
+        font-weight: 300;
+        max-width: auto;
+        padding: 0px 48px;
     }
-    tr:not(#tableHead){
+}
+
+#refsTable,
+#projTable {
+    text-align: left;
+    width: 100%;
+
+    thead {
+        font-size: 12px;
+    }
+
+    tr,
+    th {
+        max-width: 62px;
+        padding: 10px;
+        font-weight: 100;
+    }
+    th{
+        vertical-align: top;
+    }
+
+    tr:not(#tableHead) {
         border-top: 1px solid black;
     }
 }
 
-li{
+li {
     font-size: 16px;
 }

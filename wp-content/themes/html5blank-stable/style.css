@@ -1,9 +1,36 @@
+/*******VARIABLES*********/
+/**********FONTS**************/
+@font-face {
+  font-family: 'Spoof Regular';
+  src: url("fonts/Spoof/Spoof-Regular.otf") format("otf"), url("fonts/Spoof/Spoof-Regular.woff") format("woff"), url("fonts/Spoof/Spoof-Regular.woff2") format("woff2"), url("fonts/Spoof/Spoof-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Spoof Bold';
+  src: url("fonts/Spoof/Spoof-Bold.otf") format("otf"), url("fonts/Spoof/Spoof-Bold.woff") format("woff"), url("fonts/Spoof/Spoof-Bold.woff2") format("woff2"), url("fonts/Spoof/Spoof-Bold.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Spoof Bold Slanted';
+  src: url("fonts/Spoof/Spoof-BoldSlanted.otf") format("otf"), url("fonts/Spoof/Spoof-BoldSlanted.woff") format("woff"), url("fonts/Spoof/Spoof-BoldSlanted.woff2") format("woff2"), url("fonts/Spoof/Spoof-BoldSlanted.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Spoof Regular Slanted';
+  src: url("fonts/Spoof/Spoof-RegularSlanted.otf") format("otf"), url("fonts/Spoof/Spoof-RegularSlanted.woff") format("woff"), url("fonts/Spoof/Spoof-RegularSlanted.woff2") format("woff2"), url("fonts/Spoof/Spoof-RegularSlanted.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
 /*******BASIC STYLES*******/
-footer, header {
+footer,
+header {
   display: none; }
 
 body {
-  font-family: sans-serif; }
+  font-family: 'Spoof Regular', Spoof Regular, sans-serif; }
 
 ul {
   list-style-type: none; }
@@ -11,15 +38,93 @@ ul {
     cursor: pointer;
     margin: 0px 12px; }
 
+h2 {
+  font-weight: 300;
+  font-size: 48px; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+/**Global layout **/
+#bodyContainer {
+  background-color: white; }
+  #bodyContainer.yellowOn {
+    background-color: #FFD752 !important; }
+
+#leftNavContainer {
+  width: 30vh;
+  min-width: 220px;
+  position: fixed;
+  height: 100vh; }
+  #leftNavContainer nav {
+    transform: rotate(270deg);
+    bottom: 27px;
+    margin-top: 198px;
+    font-size: 24px;
+    padding-bottom: 106px;
+    display: inline-block; }
+    #leftNavContainer nav span {
+      margin: 0px 22px; }
+    #leftNavContainer nav #switchIcon {
+      width: 24px;
+      transform: rotate(90deg);
+      vertical-align: middle;
+      cursor: pointer; }
+      #leftNavContainer nav #switchIcon.switchOn {
+        transform: rotate(270deg) !important; }
+
+#heroContainer .content img {
+  width: 100%; }
+
+#contentContainer {
+  max-width: 85vw;
+  margin-left: 15vw;
+  padding-right: 11.2vw; }
+  #contentContainer #descContainer .content {
+    font-size: 36px; }
+  #contentContainer #teamContainer {
+    display: inline-block;
+    width: 100%;
+    padding: 32px 0px; }
+    #contentContainer #teamContainer .title {
+      float: left;
+      margin-right: 8%; }
+      #contentContainer #teamContainer .title h2 {
+        margin-top: -15px; }
+    #contentContainer #teamContainer ul {
+      float: right; }
+      #contentContainer #teamContainer ul li {
+        display: inline-block; }
+
 /**TABLEAU**/
-table {
+#teamList {
+  text-align: left; }
+  #teamList th {
+    font-size: 22px;
+    font-weight: 300;
+    max-width: auto;
+    padding: 0px 48px; }
+
+#refsTable,
+#projTable {
   text-align: left;
-  width: 90%;
-  font-weight: 100; }
-  table tr, table th {
+  width: 100%; }
+  #refsTable thead,
+  #projTable thead {
+    font-size: 12px; }
+  #refsTable tr,
+  #refsTable th,
+  #projTable tr,
+  #projTable th {
     max-width: 62px;
-    padding: 10px; }
-  table tr:not(#tableHead) {
+    padding: 10px;
+    font-weight: 100; }
+  #refsTable th,
+  #projTable th {
+    vertical-align: top; }
+  #refsTable tr:not(#tableHead),
+  #projTable tr:not(#tableHead) {
     border-top: 1px solid black; }
 
 li {
