@@ -20,11 +20,15 @@
                 <?php ?>
                 <div id="leftNavContainer">
                     <nav>
-                        <img id="logo" ></img>
+                    <?php 
+                            $logo = get_field('logo');
+                            if( !empty( $logo ) ): ?>
+                                <img id="logo" src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+                            <?php endif; ?>
                         <span><a href="#About">A propos</a></span>
                         </span><a href="#Team">Équipe</a></span>
                         <span><a href="#Refs">Références</a></span>
-                        <span><svg id="switchIcon" onclick="toggleYellow()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388.2 381.38"><defs><style>.cls-1{isolation:isolate;}</style></defs><title>432_assets</title><g id="Composant_12_1" data-name="Composant 12 1"><g id="_" data-name=" " class="cls-1"><g class="cls-1"><path d="M385.5,191c0,108-82.13,189.12-191.63,189.12C84,380.1,1.5,299,1.5,191S83.79,1.88,193.5,1.88,385.5,83,385.5,191ZM193.87,350.28h1.88l.35-318.57-2.6,0c-92,0-161,68.22-161,159.3S101.71,350.28,193.87,350.28Z"/></g></g></g></svg></span>
+                        <span id="switchContainer"><svg id="switchIcon" onclick="toggleYellow()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388.2 381.38"><defs><style>.cls-1{isolation:isolate;}</style></defs><title>432_assets</title><g id="Composant_12_1" data-name="Composant 12 1"><g id="_" data-name=" " class="cls-1"><g class="cls-1"><path d="M385.5,191c0,108-82.13,189.12-191.63,189.12C84,380.1,1.5,299,1.5,191S83.79,1.88,193.5,1.88,385.5,83,385.5,191ZM193.87,350.28h1.88l.35-318.57-2.6,0c-92,0-161,68.22-161,159.3S101.71,350.28,193.87,350.28Z"/></g></g></g></svg></span>
                     </nav>
                 </div>
 
@@ -48,6 +52,12 @@
                     <div id="descContainer">
                         <div class="content">
                             <?php echo the_field('description'); ?>
+                        </div>
+                    </div>
+
+                    <!--- Box -->
+                    <div id="blackBox">
+                        <div class="content">
                         </div>
                     </div>
 

@@ -59,8 +59,8 @@ body::-webkit-scrollbar {
     background-color: #FFD752 !important; }
 
 #leftNavContainer {
-  height: 156px;
-  transform: rotate(-90deg) translate(-78px, 78px);
+  height: 172px;
+  transform: rotate(-90deg) translate(-86px, 86px);
   width: 100vh;
   padding: 20px;
   position: fixed;
@@ -73,15 +73,17 @@ body::-webkit-scrollbar {
       transform: rotate(-90deg) translate(-46px, 46px); } }
   @media (max-width: 1024px) {
     #leftNavContainer {
-      height: 32px;
-      transform: rotate(-90deg) translate(-16px, 16px); } }
+      height: 76px;
+      transform: rotate(-90deg) translate(-38px, 38px); } }
   #leftNavContainer nav {
     position: absolute;
     bottom: 0px;
-    right: 112px;
-    font-size: 24px; }
+    right: 15%;
+    font-size: 22px; }
     #leftNavContainer nav span {
-      margin: 0px 26px; }
+      margin: 0px 38px; }
+    #leftNavContainer nav #switchContainer {
+      margin: 0px; }
     #leftNavContainer nav #switchIcon {
       width: 24px;
       transform: rotate(90deg);
@@ -93,11 +95,11 @@ body::-webkit-scrollbar {
 #heroContainer .content {
   text-align: center; }
   #heroContainer .content img {
-    width: 93%; }
+    width: 94%; }
 
 #contentContainer {
   margin-left: 156px;
-  padding-left: 68px;
+  padding-left: 78px;
   padding-right: 7.7vw;
   padding-top: 48px; }
   @media (max-width: 1280px) {
@@ -105,10 +107,15 @@ body::-webkit-scrollbar {
       margin-left: 92px; } }
   @media (max-width: 1024px) {
     #contentContainer {
-      margin-left: 32px; } }
+      margin-left: 46px; } }
   #contentContainer #descContainer .content {
     font-size: 40px;
-    line-height: 42px; }
+    line-height: 44px; }
+  #contentContainer #blackBox {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    margin-top: 92px; }
   #contentContainer #teamContainer {
     display: inline-block;
     width: 100%;
@@ -127,7 +134,12 @@ body::-webkit-scrollbar {
         display: inline-block; }
 
 #coordinatesContainer {
-  margin: 92px 0px; }
+  padding: 92px 0px; }
+
+#logo {
+  width: 146px;
+  margin-right: 52px;
+  vertical-align: middle; }
 
 /**TABLEAU**/
 @media (max-width: 1023px) {
@@ -151,7 +163,7 @@ body::-webkit-scrollbar {
     font-size: 24px;
     font-weight: 300;
     max-width: auto;
-    padding: 0px 124px 0px 0px; }
+    padding: 0px 7.3vw 0px 0px; }
 
 #refsTable,
 #projTable {

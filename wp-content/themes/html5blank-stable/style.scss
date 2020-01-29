@@ -98,7 +98,7 @@ body::-webkit-scrollbar {
     }
 }
 #leftNavContainer {
-    @include left-panel(156px);
+    @include left-panel(172px);
     width: 100vh;
     padding: 20px;
     position: fixed;
@@ -109,15 +109,18 @@ body::-webkit-scrollbar {
         @include left-panel(92px);
     }
     @include media('<=large') {
-        @include left-panel(32px);
+        @include left-panel(76px);
     }
     nav {
         position: absolute;
         bottom: 0px;
-        right: 112px;
-        font-size: 24px;
+        right: 15%;
+        font-size: 22px;
         span {
-            margin: 0px 26px;
+            margin: 0px 38px;
+        }
+        #switchContainer{
+            margin: 0px;
         }
         #switchIcon {
             width: 24px;
@@ -135,7 +138,7 @@ body::-webkit-scrollbar {
     .content{
         text-align: center;
         img{
-            width: 93%;
+            width: 94%;
         }
     }
 }
@@ -143,20 +146,26 @@ body::-webkit-scrollbar {
 #contentContainer {
     //max-width: 85vw;
     margin-left: $nav-width;
-    padding-left: 68px;
+    padding-left: 78px;
     padding-right: 7.7vw;
     padding-top: 48px;
     @include media('<=xlarge') {
         margin-left: 92px;
     }
     @include media('<=large') {
-        margin-left: 32px;
+        margin-left: 46px;
     }
     #descContainer {
         .content {
             font-size: 40px;
-            line-height: 42px;
+            line-height: 44px;
         }
+    }
+    #blackBox{
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+        margin-top: 92px;
     }
     #teamContainer {
         display: inline-block;
@@ -186,10 +195,15 @@ body::-webkit-scrollbar {
 }
 
 #coordinatesContainer{
-    margin:92px 0px;
+    padding:92px 0px;
 }
 
+#logo{
+    width: 146px;
+    margin-right: 52px;
+    vertical-align: middle;
 
+}
 
 /**TABLEAU**/
 .hide{
@@ -219,7 +233,7 @@ body::-webkit-scrollbar {
         font-size: 24px;
         font-weight: 300;
         max-width: auto;
-        padding: 0px 124px 0px 0px;
+        padding: 0px 7.3vw 0px 0px;
     }
 }
 
