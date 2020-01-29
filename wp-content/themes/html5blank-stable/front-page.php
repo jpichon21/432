@@ -96,12 +96,18 @@
                             <table id="projTable">
                                     <thead >
                                         <tr id="tableHead">
-                                            <th>Projets</th>
+                                            <th >Projets</th>
                                             <th>Programme</th>
-                                            <th>Maîtrise d'ouvrage</th>
-                                            <th>Surface</th>
-                                            <th class="mini">Phase</th>
-                                            <th>Equipe</th>
+                                            <th class="hide">Maîtrise d'ouvrage</th>
+                                            <th class="hide">Surface</th>
+                                            <th class="hide"></th>
+                                            <th class="hide">Phase</th>
+                                            <th class="hide">Equipe</th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
                                
                                         </tr>
                                     </thead>
@@ -111,12 +117,13 @@
                                     if( have_rows('projets') ):
                                         while ( have_rows('projets') ) : the_row(); ?>
                                         <tr>
-                                            <th><?php echo the_sub_field('projets'); ?> </th>
+                                            <th ><?php echo the_sub_field('projets'); ?> </th>
                                             <th><?php echo the_sub_field('programme'); ?> </th>
-                                            <th><?php echo the_sub_field('maitrise_douvrage');?></th>
-                                            <th><?php echo the_sub_field('surface'); ?> </th>
-                                            <th class="mini"><?php echo the_sub_field('phase'); ?> </th>
-                                            <th><?php echo the_sub_field('equipe'); ?> </th>
+                                            <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
+                                            <th class="hide" colspan="2"><?php echo the_sub_field('surface'); ?> </th>
+                                            <th class="hide"><?php echo the_sub_field('phase'); ?> </th>
+                                            <th class="hide" colspan="6"><?php echo the_sub_field('equipe'); ?> </th>
+                           
                                         </tr>
                                         <?php
                                             endwhile;
@@ -147,12 +154,17 @@
                             <table id="refsTable">
                                     <thead >
                                         <tr id="tableHead">
-                                            <th>Projets</th>
+                                            <th >Projets</th>
                                             <th>Programme</th>
-                                            <th>Maîtrise d'ouvrage</th>
-                                            <th>Surface</th>
-                                            <th>Livraison</th>
-                                            <th>Mission</th>
+                                            <th class="hide">Maîtrise d'ouvrage</th>
+                                            <th class="hide">Surface</th>
+                                            <th class="hide">Livraison</th>
+                                            <th class="hide">Mission</th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
+                                            <th class="hide"></th>
                                         </tr>
                                     </thead>
 
@@ -161,12 +173,13 @@
                                     if( have_rows('references') ):
                                         while ( have_rows('references') ) : the_row(); ?>
                                         <tr>
-                                            <th><?php echo the_sub_field('projets'); ?> </th>
+                                            <th ><?php echo the_sub_field('projets'); ?> </th>
                                             <th><?php echo the_sub_field('programme'); ?> </th>
-                                            <th><?php echo the_sub_field('maitrise_douvrage');?></th>
-                                            <th><?php echo the_sub_field('surface'); ?> </th>
-                                            <th><?php echo the_sub_field('livraison'); ?> </th>
-                                            <th><?php echo the_sub_field('mission'); ?> </th>
+                                            <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
+                                            <th class="hide"><?php echo the_sub_field('surface'); ?> </th>
+                                            <th class="hide"><?php echo the_sub_field('livraison'); ?> </th>
+                                            <th class="hide" colspan="6"><?php echo the_sub_field('mission'); ?> </th>
+                                     
                                         </tr>
                                         <?php
                                             endwhile;
@@ -181,11 +194,25 @@
 
                         </div>
                     </div>
+                    
+                    <div id="coordinatesContainer">
+                        <table id="coordinatesList">
+                            <tr>
+                                <th>284 Rue de Créqui,</th>
+                                <th>T. +33 6 33 77 82 64</th>
+                            </tr>
+
+                            <tr>
+                                <th>69007 Lyon</th>
+                                <th>M. contact@432.archi</th>
+                            </tr>
+                        <table>
+                    </div>
+
                     <!--END CONTENT CONTAINER -->
                 </div>
 
-
-          
+                    
                 <?php get_footer(); ?>
 
         </div>

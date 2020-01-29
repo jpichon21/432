@@ -1,3 +1,4 @@
+/*******BREAKPOINTS********/
 /*******VARIABLES*********/
 /**********FONTS**************/
 @font-face {
@@ -40,7 +41,8 @@ ul {
 
 h2 {
   font-weight: 300;
-  font-size: 52px; }
+  font-size: 52px;
+  margin-bottom: 20px; }
 
 a {
   text-decoration: none;
@@ -58,13 +60,21 @@ body::-webkit-scrollbar {
 
 #leftNavContainer {
   height: 156px;
+  transform: rotate(-90deg) translate(-78px, 78px);
   width: 100vh;
   padding: 20px;
   position: fixed;
   left: 0;
   bottom: 0;
-  transform: rotate(-90deg) translate(-78px, 78px);
   transform-origin: 0; }
+  @media (max-width: 1280px) {
+    #leftNavContainer {
+      height: 92px;
+      transform: rotate(-90deg) translate(-46px, 46px); } }
+  @media (max-width: 1024px) {
+    #leftNavContainer {
+      height: 32px;
+      transform: rotate(-90deg) translate(-16px, 16px); } }
   #leftNavContainer nav {
     position: absolute;
     bottom: 0px;
@@ -83,14 +93,19 @@ body::-webkit-scrollbar {
 #heroContainer .content {
   text-align: center; }
   #heroContainer .content img {
-    width: 92%; }
+    width: 93%; }
 
 #contentContainer {
-  max-width: 85vw;
   margin-left: 156px;
   padding-left: 68px;
   padding-right: 7.7vw;
   padding-top: 48px; }
+  @media (max-width: 1280px) {
+    #contentContainer {
+      margin-left: 92px; } }
+  @media (max-width: 1024px) {
+    #contentContainer {
+      margin-left: 32px; } }
   #contentContainer #descContainer .content {
     font-size: 40px;
     line-height: 42px; }
@@ -100,7 +115,10 @@ body::-webkit-scrollbar {
     padding: 32px 0px; }
     #contentContainer #teamContainer .title {
       float: left;
-      margin-right: 8%; }
+      margin-right: 9%; }
+      @media (max-width: 1023px) {
+        #contentContainer #teamContainer .title {
+          width: 100%; } }
       #contentContainer #teamContainer .title h2 {
         margin-top: -15px; }
     #contentContainer #teamContainer ul {
@@ -108,7 +126,14 @@ body::-webkit-scrollbar {
       #contentContainer #teamContainer ul li {
         display: inline-block; }
 
+#coordinatesContainer {
+  margin: 92px 0px; }
+
 /**TABLEAU**/
+@media (max-width: 1023px) {
+  .hide {
+    display: none; } }
+
 #teamList {
   text-align: left; }
   #teamList th {
@@ -116,6 +141,17 @@ body::-webkit-scrollbar {
     font-weight: 300;
     max-width: auto;
     padding: 0px 48px; }
+    @media (max-width: 1280px) {
+      #teamList th {
+        padding: 0px 18px 0px 0px; } }
+
+#coordinatesList {
+  text-align: left; }
+  #coordinatesList th {
+    font-size: 24px;
+    font-weight: 300;
+    max-width: auto;
+    padding: 0px 124px 0px 0px; }
 
 #refsTable,
 #projTable {
@@ -135,13 +171,16 @@ body::-webkit-scrollbar {
     #refsTable th.mini,
     #projTable tr.mini,
     #projTable th.mini {
-      max-width: 20px; }
+      max-width: fit-content; }
   #refsTable th,
   #projTable th {
     vertical-align: top; }
   #refsTable tr:not(#tableHead),
   #projTable tr:not(#tableHead) {
     border-top: 1px solid black; }
+  #refsTable tr:last-of-type,
+  #projTable tr:last-of-type {
+    border-bottom: 1px solid black; }
 
 li {
   font-size: 16px; }

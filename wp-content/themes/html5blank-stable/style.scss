@@ -1,6 +1,17 @@
+@import 'include-media.scss';
+
+/*******BREAKPOINTS********/
+$breakpoints: (small: 0px, xsmall: 345px, mobile: 435px, medium: 768px, large: 1024px, xlarge: 1280px, xxlarge: 1440px, laptop: 1780px);
+
 /*******VARIABLES*********/
 $color-yellow: #FFD752;
-$nav_width:156px;
+$nav-width: 156px;
+
+@mixin left-panel($nav-width){
+    height: $nav-width;
+    transform: rotate(-90deg) translate(-$nav-width/2, $nav-width/2);
+}
+
 
 /**********FONTS**************/
 @font-face {
@@ -66,6 +77,7 @@ ul {
 h2 {
     font-weight: 300;
     font-size: 52px;
+    margin-bottom: 20px;
 }
 
 a {
@@ -86,14 +98,19 @@ body::-webkit-scrollbar {
     }
 }
 #leftNavContainer {
-    height: $nav_width;
+    @include left-panel(156px);
     width: 100vh;
     padding: 20px;
     position: fixed;
     left: 0;
     bottom: 0;
-    transform: rotate(-90deg) translate(-$nav_width/2, $nav_width/2);
     transform-origin: 0;
+    @include media('<=xlarge') {
+        @include left-panel(92px);
+    }
+    @include media('<=large') {
+        @include left-panel(32px);
+    }
     nav {
         position: absolute;
         bottom: 0px;
@@ -118,17 +135,23 @@ body::-webkit-scrollbar {
     .content{
         text-align: center;
         img{
-            width: 92%;
+            width: 93%;
         }
     }
 }
 
 #contentContainer {
-    max-width: 85vw;
-    margin-left: $nav_width;
+    //max-width: 85vw;
+    margin-left: $nav-width;
     padding-left: 68px;
     padding-right: 7.7vw;
     padding-top: 48px;
+    @include media('<=xlarge') {
+        margin-left: 92px;
+    }
+    @include media('<=large') {
+        margin-left: 32px;
+    }
     #descContainer {
         .content {
             font-size: 40px;
@@ -142,7 +165,10 @@ body::-webkit-scrollbar {
 
         .title {
             float: left;
-            margin-right: 8%;
+            margin-right: 9%;
+            @include media('<large') {
+               width: 100%;
+            }
 
             h2 {
                 margin-top: -15px;
@@ -159,9 +185,18 @@ body::-webkit-scrollbar {
     }
 }
 
+#coordinatesContainer{
+    margin:92px 0px;
+}
+
 
 
 /**TABLEAU**/
+.hide{
+    @include media('<large') {
+        display: none;
+    }
+}
 
 #teamList {
     text-align: left;
@@ -172,6 +207,19 @@ body::-webkit-scrollbar {
         font-weight: 300;
         max-width: auto;
         padding: 0px 48px;
+        @include media('<=xlarge') {
+            padding: 0px 18px 0px 0px;
+        }
+    }
+}
+
+#coordinatesList{
+    text-align: left;
+    th{
+        font-size: 24px;
+        font-weight: 300;
+        max-width: auto;
+        padding: 0px 124px 0px 0px;
     }
 }
 
@@ -190,7 +238,7 @@ body::-webkit-scrollbar {
         padding: 10px 10px 10px 0px;
         font-weight: 100;
         &.mini{
-            max-width: 20px;
+         max-width: fit-content;  
         }
     }
     th{
@@ -199,6 +247,9 @@ body::-webkit-scrollbar {
 
     tr:not(#tableHead) {
         border-top: 1px solid black;
+    }
+    tr:last-of-type{
+        border-bottom: 1px solid black;
     }
 }
 
