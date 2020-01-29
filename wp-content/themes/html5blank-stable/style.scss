@@ -1,6 +1,6 @@
 /*******VARIABLES*********/
-$left-menu: 15vw;
 $color-yellow: #FFD752;
+$nav_width:156px;
 
 /**********FONTS**************/
 @font-face {
@@ -65,7 +65,7 @@ ul {
 
 h2 {
     font-weight: 300;
-    font-size: 48px;
+    font-size: 52px;
 }
 
 a {
@@ -74,6 +74,11 @@ a {
 }
 
 /**Global layout **/
+body::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+}
+
 #bodyContainer{
     background-color: white;
     &.yellowOn{
@@ -81,21 +86,21 @@ a {
     }
 }
 #leftNavContainer {
-    width: 30vh;
-    min-width: 220px;
+    height: $nav_width;
+    width: 100vh;
+    padding: 20px;
     position: fixed;
-    height: 100vh;
+    left: 0;
+    bottom: 0;
+    transform: rotate(-90deg) translate(-$nav_width/2, $nav_width/2);
+    transform-origin: 0;
     nav {
-        transform: rotate(270deg);
-        bottom: 27px;
-        margin-top: 198px;
+        position: absolute;
+        bottom: 0px;
+        right: 112px;
         font-size: 24px;
-        padding-bottom: 106px;
-        //width: 300%;
-        display: inline-block;
-
         span {
-            margin: 0px 22px;
+            margin: 0px 26px;
         }
         #switchIcon {
             width: 24px;
@@ -111,19 +116,23 @@ a {
 
 #heroContainer{
     .content{
+        text-align: center;
         img{
-            width: 100%;
+            width: 92%;
         }
     }
 }
 
 #contentContainer {
     max-width: 85vw;
-    margin-left: $left-menu;
-    padding-right: 11.2vw;
+    margin-left: $nav_width;
+    padding-left: 68px;
+    padding-right: 7.7vw;
+    padding-top: 48px;
     #descContainer {
         .content {
-            font-size: 36px;
+            font-size: 40px;
+            line-height: 42px;
         }
     }
     #teamContainer {
@@ -178,8 +187,11 @@ a {
     tr,
     th {
         max-width: 62px;
-        padding: 10px;
+        padding: 10px 10px 10px 0px;
         font-weight: 100;
+        &.mini{
+            max-width: 20px;
+        }
     }
     th{
         vertical-align: top;

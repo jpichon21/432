@@ -40,32 +40,38 @@ ul {
 
 h2 {
   font-weight: 300;
-  font-size: 48px; }
+  font-size: 52px; }
 
 a {
   text-decoration: none;
   color: #000; }
 
 /**Global layout **/
+body::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; }
+
 #bodyContainer {
   background-color: white; }
   #bodyContainer.yellowOn {
     background-color: #FFD752 !important; }
 
 #leftNavContainer {
-  width: 30vh;
-  min-width: 220px;
+  height: 156px;
+  width: 100vh;
+  padding: 20px;
   position: fixed;
-  height: 100vh; }
+  left: 0;
+  bottom: 0;
+  transform: rotate(-90deg) translate(-78px, 78px);
+  transform-origin: 0; }
   #leftNavContainer nav {
-    transform: rotate(270deg);
-    bottom: 27px;
-    margin-top: 198px;
-    font-size: 24px;
-    padding-bottom: 106px;
-    display: inline-block; }
+    position: absolute;
+    bottom: 0px;
+    right: 112px;
+    font-size: 24px; }
     #leftNavContainer nav span {
-      margin: 0px 22px; }
+      margin: 0px 26px; }
     #leftNavContainer nav #switchIcon {
       width: 24px;
       transform: rotate(90deg);
@@ -74,15 +80,20 @@ a {
       #leftNavContainer nav #switchIcon.switchOn {
         transform: rotate(270deg) !important; }
 
-#heroContainer .content img {
-  width: 100%; }
+#heroContainer .content {
+  text-align: center; }
+  #heroContainer .content img {
+    width: 92%; }
 
 #contentContainer {
   max-width: 85vw;
-  margin-left: 15vw;
-  padding-right: 11.2vw; }
+  margin-left: 156px;
+  padding-left: 68px;
+  padding-right: 7.7vw;
+  padding-top: 48px; }
   #contentContainer #descContainer .content {
-    font-size: 36px; }
+    font-size: 40px;
+    line-height: 42px; }
   #contentContainer #teamContainer {
     display: inline-block;
     width: 100%;
@@ -118,8 +129,13 @@ a {
   #projTable tr,
   #projTable th {
     max-width: 62px;
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
     font-weight: 100; }
+    #refsTable tr.mini,
+    #refsTable th.mini,
+    #projTable tr.mini,
+    #projTable th.mini {
+      max-width: 20px; }
   #refsTable th,
   #projTable th {
     vertical-align: top; }

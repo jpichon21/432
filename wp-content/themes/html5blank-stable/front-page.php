@@ -100,7 +100,7 @@
                                             <th>Programme</th>
                                             <th>Maîtrise d'ouvrage</th>
                                             <th>Surface</th>
-                                            <th>Phase</th>
+                                            <th class="mini">Phase</th>
                                             <th>Equipe</th>
                                
                                         </tr>
@@ -115,7 +115,7 @@
                                             <th><?php echo the_sub_field('programme'); ?> </th>
                                             <th><?php echo the_sub_field('maitrise_douvrage');?></th>
                                             <th><?php echo the_sub_field('surface'); ?> </th>
-                                            <th><?php echo the_sub_field('phase'); ?> </th>
+                                            <th class="mini"><?php echo the_sub_field('phase'); ?> </th>
                                             <th><?php echo the_sub_field('equipe'); ?> </th>
                                         </tr>
                                         <?php
