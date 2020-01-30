@@ -26,9 +26,6 @@
   font-style: normal; }
 
 /*******BASIC STYLES*******/
-* {
-  box-sizing: border-box; }
-
 footer,
 header {
   display: none; }
@@ -352,7 +349,7 @@ li {
   z-index: 10;
   height: 100vh;
   width: 100vw;
-  margin-top: 14vh;
+  margin-top: 15vh;
   background-color: #000000;
   position: fixed;
   top: 0;
