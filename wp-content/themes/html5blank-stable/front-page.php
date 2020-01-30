@@ -107,11 +107,11 @@
                                     <thead >
                                         <tr id="tableHead">
                                             <th >Projets</th>
-                                            <th>Programme</th>
+                                            <th class="hide">Programme</th>
                                             <th class="hide">Maîtrise d'ouvrage</th>
                                             <th class="hide">Surface</th>
                                             <th class="hide"></th>
-                                            <th class="hide">Phase</th>
+                                            <th class="">Phase</th>
                                             <th class="hide">Equipe</th>
                                             <th class="hide"></th>
                                             <th class="hide"></th>
@@ -128,10 +128,10 @@
                                         while ( have_rows('projets') ) : the_row(); ?>
                                         <tr>
                                             <th ><?php echo the_sub_field('projets'); ?> </th>
-                                            <th><?php echo the_sub_field('programme'); ?> </th>
+                                            <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
                                             <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
                                             <th class="hide" colspan="2"><?php echo the_sub_field('surface'); ?> </th>
-                                            <th class="hide"><?php echo the_sub_field('phase'); ?> </th>
+                                            <th class=""><?php echo the_sub_field('phase'); ?> </th>
                                             <th class="hide" colspan="6"><?php echo the_sub_field('equipe'); ?> </th>
                            
                                         </tr>
@@ -165,10 +165,10 @@
                                     <thead >
                                         <tr id="tableHead">
                                             <th >Projets</th>
-                                            <th>Programme</th>
+                                            <th class="hide">Programme</th>
                                             <th class="hide">Maîtrise d'ouvrage</th>
                                             <th class="hide">Surface</th>
-                                            <th class="hide">Livraison</th>
+                                            <th class="">Livraison</th>
                                             <th class="hide">Mission</th>
                                             <th class="hide"></th>
                                             <th class="hide"></th>
@@ -184,7 +184,7 @@
                                         while ( have_rows('references') ) : the_row(); ?>
                                         <tr>
                                             <th ><?php echo the_sub_field('projets'); ?> </th>
-                                            <th><?php echo the_sub_field('programme'); ?> </th>
+                                            <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
                                             <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
                                             <th class="hide"><?php echo the_sub_field('surface'); ?> </th>
                                             <th class="hide"><?php echo the_sub_field('livraison'); ?> </th>

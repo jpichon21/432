@@ -63,6 +63,7 @@ header {
 
 body {
     font-family: 'Spoof Regular', Spoof Regular, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 ul {
@@ -78,6 +79,7 @@ h2 {
     font-weight: 300;
     font-size: 52px;
     margin-bottom: 20px;
+    line-height: 68px;
 }
 
 a {
@@ -158,7 +160,7 @@ body::-webkit-scrollbar {
     #descContainer {
         .content {
             font-size: 40px;
-            line-height: 44px;
+            line-height: 48px;
         }
     }
     #blackBox{
@@ -260,10 +262,10 @@ body::-webkit-scrollbar {
     }
 
     tr:not(#tableHead) {
-        border-top: 1px solid black;
+        border-top: 1.5px solid black;
     }
     tr:last-of-type{
-        border-bottom: 1px solid black;
+        border-bottom: 1.5px solid black;
     }
 }
 
