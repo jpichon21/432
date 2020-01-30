@@ -33,6 +33,9 @@ header {
 body {
   font-family: 'Spoof Regular', Spoof Regular, sans-serif;
   -webkit-font-smoothing: antialiased; }
+  @media (max-width: 435px) {
+    body {
+      overflow-x: hidden; } }
 
 ul {
   list-style-type: none; }
@@ -45,6 +48,9 @@ h2 {
   font-size: 52px;
   margin-bottom: 20px;
   line-height: 68px; }
+  @media (max-width: 435px) {
+    h2 {
+      font-size: 45px; } }
 
 a {
   text-decoration: none;
@@ -57,6 +63,9 @@ body::-webkit-scrollbar {
 
 #bodyContainer {
   background-color: white; }
+  @media (max-width: 435px) {
+    #bodyContainer {
+      overflow: hidden; } }
   #bodyContainer.yellowOn {
     background-color: #FFD752 !important; }
 
@@ -77,11 +86,23 @@ body::-webkit-scrollbar {
     #leftNavContainer {
       height: 76px;
       transform: rotate(-90deg) translate(-38px, 38px); } }
+  @media (max-width: 435px) {
+    #leftNavContainer {
+      width: 100vw;
+      position: fixed;
+      transform: rotate(0deg);
+      top: 0; }
+      #leftNavContainer .mobileHide {
+        display: none; } }
   #leftNavContainer nav {
     position: absolute;
     bottom: 0px;
     right: 15%;
     font-size: 22px; }
+    @media (max-width: 435px) {
+      #leftNavContainer nav {
+        position: relative;
+        right: 0; } }
     #leftNavContainer nav span {
       margin: 0px 38px; }
     #leftNavContainer nav #switchContainer {
@@ -94,10 +115,44 @@ body::-webkit-scrollbar {
       #leftNavContainer nav #switchIcon.switchOn {
         transform: rotate(270deg) !important; }
 
-#heroContainer .content {
+#switchContainerMobile {
+  position: fixed;
+  z-index: 10;
+  height: 90px;
+  width: 90px;
+  top: 90vh;
+  left: 18px; }
+  @media (min-width: 436px) {
+    #switchContainerMobile {
+      display: none; } }
+  #switchContainerMobile #switchIconMobile {
+    width: 26px;
+    transform: rotate(360deg);
+    vertical-align: middle;
+    cursor: pointer; }
+    #switchContainerMobile #switchIconMobile.switchOn {
+      transform: rotate(180deg) !important; }
+
+#heroContainer .content,
+#heroMobileContainer .content {
   text-align: center; }
-  #heroContainer .content img {
+  #heroContainer .content img,
+  #heroMobileContainer .content img {
     width: 94%; }
+    @media (max-width: 435px) {
+      #heroContainer .content img,
+      #heroMobileContainer .content img {
+        width: 100%; } }
+
+#heroMobileContainer {
+  margin: 132px 0px; }
+  @media (min-width: 436px) {
+    #heroMobileContainer {
+      display: none; } }
+
+@media (max-width: 435px) {
+  #heroContainer {
+    display: none; } }
 
 #contentContainer {
   margin-left: 156px;
@@ -110,14 +165,28 @@ body::-webkit-scrollbar {
   @media (max-width: 1024px) {
     #contentContainer {
       margin-left: 46px; } }
+  @media (max-width: 435px) {
+    #contentContainer {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 48px 18px 0px 18px; } }
   #contentContainer #descContainer .content {
     font-size: 40px;
     line-height: 48px; }
+    @media (max-width: 435px) {
+      #contentContainer #descContainer .content {
+        font-size: 20px;
+        line-height: 26px;
+        padding-right: 34px; } }
   #contentContainer #blackBox {
     background-color: black;
     width: 100%;
     height: 100vh;
     margin-top: 92px; }
+    @media (max-width: 435px) {
+      #contentContainer #blackBox {
+        margin-top: 82px;
+        height: 214px; } }
   #contentContainer #teamContainer {
     display: inline-block;
     width: 100%;

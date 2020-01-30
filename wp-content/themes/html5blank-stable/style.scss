@@ -7,7 +7,7 @@ $breakpoints: (small: 0px, xsmall: 345px, mobile: 435px, medium: 768px, large: 1
 $color-yellow: #FFD752;
 $nav-width: 156px;
 
-@mixin left-panel($nav-width){
+@mixin left-panel($nav-width) {
     height: $nav-width;
     transform: rotate(-90deg) translate(-$nav-width/2, $nav-width/2);
 }
@@ -64,6 +64,9 @@ header {
 body {
     font-family: 'Spoof Regular', Spoof Regular, sans-serif;
     -webkit-font-smoothing: antialiased;
+    @include media('<=mobile') {
+       overflow-x: hidden;
+    }
 }
 
 ul {
@@ -80,6 +83,10 @@ h2 {
     font-size: 52px;
     margin-bottom: 20px;
     line-height: 68px;
+
+    @include media('<=mobile') {
+        font-size: 45px;
+    }
 }
 
 a {
@@ -93,12 +100,16 @@ body::-webkit-scrollbar {
     -ms-overflow-style: none;
 }
 
-#bodyContainer{
+#bodyContainer {
     background-color: white;
-    &.yellowOn{
-        background-color: #FFD752!important;
+    @include media('<=mobile') {
+        overflow: hidden;
+    }
+    &.yellowOn {
+        background-color: #FFD752 !important;
     }
 }
+
 #leftNavContainer {
     @include left-panel(172px);
     width: 100vh;
@@ -107,43 +118,109 @@ body::-webkit-scrollbar {
     left: 0;
     bottom: 0;
     transform-origin: 0;
+
     @include media('<=xlarge') {
         @include left-panel(92px);
     }
+
     @include media('<=large') {
         @include left-panel(76px);
     }
+
+    @include media('<=mobile') {
+        width: 100vw;
+        position: fixed;
+        transform: rotate(0deg);
+        top: 0;
+        .mobileHide{
+            display: none;
+        }
+    }
+
     nav {
         position: absolute;
         bottom: 0px;
         right: 15%;
         font-size: 22px;
+
+        @include media('<=mobile') {
+            position: relative;
+            right: 0;
+        }
+
         span {
             margin: 0px 38px;
         }
-        #switchContainer{
+
+        #switchContainer {
             margin: 0px;
         }
+
         #switchIcon {
             width: 24px;
             transform: rotate(90deg);
             vertical-align: middle;
             cursor: pointer;
-            &.switchOn{
-                transform: rotate(270deg)!important;
+
+            &.switchOn {
+                transform: rotate(270deg) !important;
             }
         }
     }
 }
 
-#heroContainer{
-    .content{
-        text-align: center;
-        img{
-            width: 94%;
+#switchContainerMobile{
+    position: fixed;
+    z-index: 10;
+    height: 90px;
+    width: 90px;
+    top: 90vh;
+    left: 18px;
+    @include media('>mobile') {
+        display: none;
+    }
+    #switchIconMobile {
+        width: 26px;
+        transform: rotate(360deg);
+        vertical-align: middle;
+        cursor: pointer;
+        &.switchOn {
+            transform: rotate(180deg) !important;
         }
     }
 }
+
+#heroContainer,
+#heroMobileContainer {
+    .content {
+        text-align: center;
+
+        img {
+            width: 94%;
+
+            @include media('<=mobile') {
+                width: 100%;
+            }
+        }
+    }
+}
+
+#heroMobileContainer {
+    margin: 132px 0px;
+
+    @include media('>mobile') {
+        display: none;
+
+    }
+}
+
+#heroContainer {
+    @include media('<=mobile') {
+        display: none;
+
+    }
+}
+
 
 #contentContainer {
     //max-width: 85vw;
@@ -151,24 +228,48 @@ body::-webkit-scrollbar {
     padding-left: 78px;
     padding-right: 7.7vw;
     padding-top: 48px;
+
     @include media('<=xlarge') {
         margin-left: 92px;
     }
+
     @include media('<=large') {
         margin-left: 46px;
     }
+
+    @include media('<=mobile') {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 48px 18px 0px 18px;
+
+    }
+
     #descContainer {
         .content {
             font-size: 40px;
             line-height: 48px;
+
+            @include media('<=mobile') {
+                font-size: 20px;
+                line-height: 26px;
+                padding-right: 34px;
+
+            }
         }
     }
-    #blackBox{
+
+    #blackBox {
         background-color: black;
         width: 100%;
         height: 100vh;
         margin-top: 92px;
+
+        @include media('<=mobile') {
+            margin-top: 82px;
+            height: 214px;
+        }
     }
+
     #teamContainer {
         display: inline-block;
         width: 100%;
@@ -177,8 +278,9 @@ body::-webkit-scrollbar {
         .title {
             float: left;
             margin-right: 9%;
+
             @include media('<large') {
-               width: 100%;
+                width: 100%;
             }
 
             h2 {
@@ -196,11 +298,11 @@ body::-webkit-scrollbar {
     }
 }
 
-#coordinatesContainer{
-    padding:92px 0px;
+#coordinatesContainer {
+    padding: 92px 0px;
 }
 
-#logo{
+#logo {
     width: 146px;
     margin-right: 52px;
     vertical-align: middle;
@@ -208,7 +310,7 @@ body::-webkit-scrollbar {
 }
 
 /**TABLEAU**/
-.hide{
+.hide {
     @include media('<large') {
         display: none;
     }
@@ -223,15 +325,17 @@ body::-webkit-scrollbar {
         font-weight: 300;
         max-width: auto;
         padding: 0px 48px;
+
         @include media('<=xlarge') {
             padding: 0px 18px 0px 0px;
         }
     }
 }
 
-#coordinatesList{
+#coordinatesList {
     text-align: left;
-    th{
+
+    th {
         font-size: 24px;
         font-weight: 300;
         max-width: auto;
@@ -253,18 +357,21 @@ body::-webkit-scrollbar {
         max-width: 62px;
         padding: 10px 10px 10px 0px;
         font-weight: 100;
-        &.mini{
-         max-width: fit-content;  
+
+        &.mini {
+            max-width: fit-content;
         }
     }
-    th{
+
+    th {
         vertical-align: top;
     }
 
     tr:not(#tableHead) {
         border-top: 1.5px solid black;
     }
-    tr:last-of-type{
+
+    tr:last-of-type {
         border-bottom: 1.5px solid black;
     }
 }
