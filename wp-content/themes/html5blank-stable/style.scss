@@ -56,6 +56,11 @@ $nav-width: 156px;
 
 
 /*******BASIC STYLES*******/
+
+*{
+    box-sizing: border-box;
+}
+
 footer,
 header {
     display: none;
