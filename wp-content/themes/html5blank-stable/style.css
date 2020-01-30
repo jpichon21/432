@@ -26,6 +26,9 @@
   font-style: normal; }
 
 /*******BASIC STYLES*******/
+* {
+  box-sizing: border-box; }
+
 footer,
 header {
   display: none; }
