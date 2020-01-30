@@ -116,7 +116,8 @@ body::-webkit-scrollbar {
 
 #leftNavContainer {
     @include left-panel(172px);
-    width: 100vh;
+    width: 105vh;
+    min-width: 856px ;
     padding: 20px;
     position: fixed;
     left: 0;
@@ -127,6 +128,10 @@ body::-webkit-scrollbar {
     &.navBlack{
         background-color: #000!important;
         transition: 0s ease;
+    }
+    @include media('>laptop') {
+        @include left-panel(164px);
+
     }
     @include media('<=xlarge') {
         @include left-panel(92px);
@@ -141,6 +146,7 @@ body::-webkit-scrollbar {
         position: fixed;
         transform: rotate(0deg);
         top: 0;
+        min-width: 0px ;
         .mobileHide{
             display: none;
         }
@@ -249,8 +255,11 @@ body::-webkit-scrollbar {
     @include media('<=mobile') {
         margin-left: 0px;
         margin-right: 0px;
-        padding: 48px 18px 0px 18px;
+        padding: 48px 21px 0px 18px;
 
+    }
+    @include media('>laptop') {
+        padding-right: 48px;
     }
 
     #descContainer {
@@ -439,7 +448,7 @@ li {
 #mobileMenuContainer {
     display: none;
     position: absolute;
-    right: 0px;
+    right: 16px;
     top: 18px;
     cursor: pointer;
     z-index: 10;
@@ -451,7 +460,7 @@ li {
         cursor: pointer;
     }
     #menuClose{
-         
+            width: 36px;
             fill: white;
         
     }
@@ -485,7 +494,7 @@ li {
             display: block;
         }
         .mobileNav{
-            margin: 20vh 0px;
+            margin: 16vh 0px;
         }
     }
 }
