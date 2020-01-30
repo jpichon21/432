@@ -50,7 +50,8 @@ h2 {
   line-height: 68px; }
   @media (max-width: 435px) {
     h2 {
-      font-size: 45px; } }
+      font-size: 45px;
+      line-height: 52px; } }
 
 a {
   text-decoration: none;
@@ -66,6 +67,8 @@ body::-webkit-scrollbar {
   @media (max-width: 435px) {
     #bodyContainer {
       overflow: hidden; } }
+  #bodyContainer.blackOn {
+    background-color: #000000 !important; }
   #bodyContainer.yellowOn {
     background-color: #FFD752 !important; }
 
@@ -77,7 +80,12 @@ body::-webkit-scrollbar {
   position: fixed;
   left: 0;
   bottom: 0;
-  transform-origin: 0; }
+  transform-origin: 0;
+  background-color: transparent;
+  transition: 0s ease; }
+  #leftNavContainer.navBlack {
+    background-color: #000 !important;
+    transition: 0s ease; }
   @media (max-width: 1280px) {
     #leftNavContainer {
       height: 92px;
@@ -120,7 +128,7 @@ body::-webkit-scrollbar {
   z-index: 10;
   height: 90px;
   width: 90px;
-  top: 90vh;
+  top: calc(100vh - 46px);
   left: 18px; }
   @media (min-width: 436px) {
     #switchContainerMobile {
@@ -145,7 +153,7 @@ body::-webkit-scrollbar {
         width: 100%; } }
 
 #heroMobileContainer {
-  margin: 132px 0px; }
+  margin: 10vh 0px 20vh 0px; }
   @media (min-width: 436px) {
     #heroMobileContainer {
       display: none; } }
@@ -207,7 +215,10 @@ body::-webkit-scrollbar {
 #coordinatesContainer {
   padding: 92px 0px; }
 
-#logo {
+#coordinatesContainerMobile {
+  padding: 0px; }
+
+#logo, #logoAlt {
   width: 146px;
   margin-right: 52px;
   vertical-align: middle; }
@@ -227,14 +238,46 @@ body::-webkit-scrollbar {
     @media (max-width: 1280px) {
       #teamList th {
         padding: 0px 18px 0px 0px; } }
+    @media (max-width: 435px) {
+      #teamList th {
+        font-size: 13px;
+        line-height: 16px; } }
 
-#coordinatesList {
-  text-align: left; }
-  #coordinatesList th {
+#coordinatesList, #coordinatesListMobile {
+  text-align: left;
+  border-collapse: collapse; }
+  #coordinatesList th, #coordinatesListMobile th {
     font-size: 24px;
     font-weight: 300;
     max-width: auto;
     padding: 0px 7.3vw 0px 0px; }
+    #coordinatesList th.mobile, #coordinatesListMobile th.mobile {
+      display: none; }
+    @media (max-width: 435px) {
+      #coordinatesList th, #coordinatesListMobile th {
+        font-size: 19px;
+        line-height: 25px;
+        display: block; }
+        #coordinatesList th.hidetab, #coordinatesListMobile th.hidetab {
+          display: none; }
+        #coordinatesList th.mobile, #coordinatesListMobile th.mobile {
+          display: block; } }
+    @media (max-width: 435px) {
+      #coordinatesList th, #coordinatesListMobile th {
+        font-size: 19px;
+        line-height: 25px;
+        display: block; }
+        #coordinatesList th.hidetab, #coordinatesListMobile th.hidetab {
+          display: none; }
+        #coordinatesList th.mobile, #coordinatesListMobile th.mobile {
+          display: block; } }
+  @media (max-width: 435px) {
+    #coordinatesList tr, #coordinatesListMobile tr {
+      border-spacing: 32px;
+      border-collapse: separate; } }
+
+#coordinatesContainerMobile {
+  color: #fff; }
 
 #refsTable,
 #projTable {
@@ -243,6 +286,10 @@ body::-webkit-scrollbar {
   #refsTable thead,
   #projTable thead {
     font-size: 12px; }
+    @media (max-width: 435px) {
+      #refsTable thead,
+      #projTable thead {
+        font-size: 15px; } }
   #refsTable tr,
   #refsTable th,
   #projTable tr,
@@ -267,3 +314,51 @@ body::-webkit-scrollbar {
 
 li {
   font-size: 16px; }
+
+/**MOBILE MENU**/
+#mobileMenuContainer {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 18px;
+  cursor: pointer;
+  z-index: 10; }
+  @media (max-width: 435px) {
+    #mobileMenuContainer {
+      display: inline-block; } }
+  #mobileMenuContainer #menuIcon, #mobileMenuContainer #menuClose {
+    width: 50px;
+    cursor: pointer; }
+  #mobileMenuContainer #menuClose {
+    fill: white; }
+
+#mobileMenuSplash {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0s ease;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 14vh;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  #mobileMenuSplash.menuOn {
+    opacity: 1;
+    visibility: visible;
+    transition: 0s ease; }
+  #mobileMenuSplash .content {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 18px 0px 18px; }
+    #mobileMenuSplash .content span a {
+      color: white;
+      font-size: 45px;
+      line-height: 54px;
+      display: block; }
+    #mobileMenuSplash .content .mobileNav {
+      margin: 20vh 0px; }
+
+.hideIcon {
+  display: none !important; }
