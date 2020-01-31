@@ -91,7 +91,7 @@ body::-webkit-scrollbar {
   #leftNavContainer.navBlack {
     background-color: #000 !important;
     transition: 0s ease; }
-  @media (min-width: 1780px) {
+  @media (min-width: 1441px) {
     #leftNavContainer {
       height: 164px;
       transform: rotate(-90deg) translate(-82px, 82px); } }
@@ -188,7 +188,7 @@ body::-webkit-scrollbar {
       margin-left: 0px;
       margin-right: 0px;
       padding: 48px 21px 0px 18px; } }
-  @media (min-width: 1781px) {
+  @media (min-width: 1441px) {
     #contentContainer {
       padding-right: 48px; } }
   #contentContainer #descContainer .content {
@@ -340,7 +340,7 @@ li {
 #mobileMenuContainer {
   display: none;
   position: absolute;
-  right: 16px;
+  right: 18px;
   top: 18px;
   cursor: pointer;
   z-index: 10; }
