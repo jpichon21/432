@@ -123,7 +123,7 @@
                             <tr>
                                 <th class="hidetab">69007 Lyon</th>
                                 <th class="mobile">T. +33 6 33 77 82 64</th>
-                                <th>M. contact@432.archi</th>
+                                <th><a href="mailto:contact@432.archi">M. contact@432.archi</a></th>
                             </tr>
                             </table>
                     </div>
@@ -171,9 +171,13 @@
         <!--- Box -->
         <div id="blackBox">
             <div class="content">
+                <?php $imagecontenu = get_field('image_contenu');
+                    if( !empty( $imagecontenu ) ): ?>
+                <img src="<?php echo esc_url($imagecontenu['url']); ?>" alt="<?php echo esc_attr($imagecontenu['alt']); ?>" />
+                <?php endif; ?>
             </div>
         </div>
-
+       
         <!----------------------------------------------------
                     ------------------ Homepage Team ---------------------
                     ------------------------------------------------------>
@@ -331,7 +335,7 @@
                 <tr>
                     <th class="hidetab">69007 Lyon</th>
                     <th class="mobile">T. +33 6 33 77 82 64</th>
-                    <th>M. contact@432.archi</th>
+                    <th><a href="mailto:contact@432.archi">M. contact@432.archi</a></th>
                 </tr>
                 <table>
         </div>
