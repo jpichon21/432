@@ -106,9 +106,9 @@
             <div id="mobileMenuSplash">
                 <div class="content">
                     <div class="mobileNav">
-                        <span class=""><a href="#About">A propos</a></span>
-                        <span class=""><a href="#Team">Équipe</a></span>
-                        <span class=""><a href="#Refs">Références</a></span>
+                        <span class=""><a onclick="toggleMenu()" href="#About">A propos</a></span>
+                        <span class=""><a onclick="toggleMenu()" href="#Team">Équipe</a></span>
+                        <span class=""><a onclick="toggleMenu()" href="#Refs">Références</a></span>
                     </div>
 
                     <div id="coordinatesContainerMobile">
@@ -163,14 +163,14 @@
                     ------------------ Homepage Description ---------------------
                     ------------------------------------------------------>
         <div id="descContainer">
-            <div class="content">
+            <div class="content" id="About">
                 <?php echo the_field('description'); ?>
             </div>
         </div>
 
         <!--- Box -->
         <div id="blackBox">
-            <div class="content">
+            <div class="content" id="Team">
                 <?php $imagecontenu = get_field('image_contenu');
                     if( !empty( $imagecontenu ) ): ?>
                 <img src="<?php echo esc_url($imagecontenu['url']); ?>" alt="<?php echo esc_attr($imagecontenu['alt']); ?>" />
@@ -181,8 +181,8 @@
         <!----------------------------------------------------
                     ------------------ Homepage Team ---------------------
                     ------------------------------------------------------>
-        <div id="teamContainer" id="Team">
-            <div class="content">
+        <div id="teamContainer">
+            <div class="content" >
 
                 <div class="title">
                     <h2>Équipe</h2>
@@ -213,8 +213,8 @@
         <!----------------------------------------------------
                     ------------------ Homepage Projets ---------------
                     ------------------------------------------------------>
-        <div id="projContainer" id="References">
-            <div class="content">
+        <div id="projContainer">
+            <div class="content" >
                 <!--tableau !-->
 
                 <div class="title">
@@ -272,7 +272,7 @@
                     ------------------ Homepage References ---------------
                     ------------------------------------------------------>
         <div id="refsContainer">
-            <div class="content">
+            <div class="content" id="Refs">
                 <!--tableau !-->
 
                 <div class="title">

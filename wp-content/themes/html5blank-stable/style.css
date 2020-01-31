@@ -26,6 +26,9 @@
   font-style: normal; }
 
 /*******BASIC STYLES*******/
+html {
+  scroll-behavior: smooth; }
+
 footer,
 header {
   display: none; }
