@@ -25,9 +25,18 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Helvetica Regular';
+  src: url("fonts/Helvetica/Helvetica.woff") format("woff"), url("fonts/Helvetica/Helvetica.woff2") format("woff2"), url("fonts/Helvetica/Helvetica.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
 /*******BASIC STYLES*******/
 html {
   scroll-behavior: smooth; }
+
+.exposant {
+  font-family: 'Helvetica Regular', helvetica-regular, sans-serif; }
 
 footer,
 header {

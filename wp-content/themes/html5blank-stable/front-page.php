@@ -248,7 +248,7 @@
                             <th><?php echo the_sub_field('projets'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
-                            <th class="hide" colspan="2"><?php echo the_sub_field('surface'); ?> </th>
+                            <th class="hide" colspan="2" id="surface"><?php echo the_sub_field('surface'); ?></th>
                             <th class=""><?php echo the_sub_field('phase'); ?> </th>
                             <th class="hide" colspan="6"><?php echo the_sub_field('equipe'); ?> </th>
 
@@ -285,7 +285,7 @@
                             <th>Projets</th>
                             <th class="hide">Programme</th>
                             <th class="hide">Maîtrise d'ouvrage</th>
-                            <th class="hide">Surface</th>
+                            <th class="hide" id="surface">Surface</th>
                             <th class="">Livraison</th>
                             <th class="hide">Mission</th>
                             <th class="hide"></th>
@@ -304,7 +304,7 @@
                             <th><?php echo the_sub_field('projets'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
-                            <th class="hide"><?php echo the_sub_field('surface'); ?> </th>
+                            <th class="hide" id="surfaceRef"><?php echo the_sub_field('surface'); ?></th>
                             <th class=""><?php echo the_sub_field('livraison'); ?> </th>
                             <th class="hide" colspan="6"><?php echo the_sub_field('mission'); ?> </th>
 
@@ -348,6 +348,15 @@
 
     </div>
     <script>
+    
+    var surface = document.getElementById("surface");
+    var surfaceRef = document.getElementById("surfaceRef");
+    console.log(surface);
+    console.log(surfaceRef);
+
+    innerHTML = surface.innerHTML.replace('²', '<span class="exposant">²</span>');
+    innerHTML2 = surfaceRef.innerHTML.replace('²', '<span class="exposant">²</span>');
+
         function toggleYellow() {
             var target = document.getElementById("switchIcon");
             var targetMobile = document.getElementById("switchIconMobile");
@@ -373,6 +382,8 @@
             logo.classList.toggle("hideIcon");
             logoAlt.classList.toggle("hideIcon");
         }
+
+
     </script>
 </body>
 
