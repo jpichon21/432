@@ -54,7 +54,7 @@
                 <img id="logoAlt" class="hideIcon" src="<?php echo esc_url($logoAlt['url']); ?>" alt="<?php echo esc_attr($logoAlt['alt']); ?>" />
                 <?php endif; ?>
 
-                <span class="mobileHide"><a href="#About">A propos</a></span>
+                <span class="mobileHide"><a href="#About">À propos</a></span>
                 <span class="mobileHide"><a href="#Team">Équipe</a></span>
                 <span class="mobileHide"><a href="#Refs">Références</a></span>
                 <span class="mobileMenu" id="mobileMenuContainer"><svg id="menuIcon" onclick="toggleMenu()"
@@ -106,7 +106,7 @@
             <div id="mobileMenuSplash">
                 <div class="content">
                     <div class="mobileNav">
-                        <span class=""><a onclick="toggleMenu()" href="#About">A propos</a></span>
+                        <span class=""><a onclick="toggleMenu()" href="#About">À propos</a></span>
                         <span class=""><a onclick="toggleMenu()" href="#Team">Équipe</a></span>
                         <span class=""><a onclick="toggleMenu()" href="#Refs">Références</a></span>
                     </div>
