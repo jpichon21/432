@@ -248,7 +248,7 @@
                             <th><?php echo the_sub_field('projets'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
-                            <th class="hide" colspan="2" id="surface"><?php echo the_sub_field('surface'); ?></th>
+                            <th class="hide" colspan="2" class="surfaceField"><?php echo the_sub_field('surface'); ?></th>
                             <th class=""><?php echo the_sub_field('phase'); ?> </th>
                             <th class="hide" colspan="6"><?php echo the_sub_field('equipe'); ?> </th>
 
@@ -304,7 +304,7 @@
                             <th><?php echo the_sub_field('projets'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
                             <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
-                            <th class="hide" id="surfaceRef"><?php echo the_sub_field('surface'); ?></th>
+                            <th class="hide" class="surfaceRefField"><?php echo the_sub_field('surface'); ?></th>
                             <th class=""><?php echo the_sub_field('livraison'); ?> </th>
                             <th class="hide" colspan="6"><?php echo the_sub_field('mission'); ?> </th>
 
@@ -348,14 +348,22 @@
 
     </div>
     <script>
-    
-    var surface = document.getElementById("surface");
-    var surfaceRef = document.getElementById("surfaceRef");
+
+
+    var surface = document.getElementsByClassName('surfaceField');
+    for(var i = 0; i < surface.length; i++)
+    {
+        surface[i].innerHTML = surface.innerHTML.replace('²', '<span class="exposant-type">²</span>');
+    }
+   
+    var surfaceRef = document.getElementsByClassName('surfaceRefField');
+    for(var i = 0; i < surfaceRef.length; i++)
+    {
+         surfaceRef.innerHTML = surfaceRef.innerHTML.replace('²', '<span class="exposant-type">²</span>');
+    }
+
     console.log(surface);
     console.log(surfaceRef);
-
-    innerHTML = surface.innerHTML.replace('²', '<span class="exposant">²</span>');
-    innerHTML2 = surfaceRef.innerHTML.replace('²', '<span class="exposant">²</span>');
 
         function toggleYellow() {
             var target = document.getElementById("switchIcon");

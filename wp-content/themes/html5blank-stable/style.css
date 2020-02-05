@@ -36,7 +36,8 @@ html {
   scroll-behavior: smooth; }
 
 .exposant {
-  font-family: 'Helvetica Regular', helvetica-regular, sans-serif; }
+  font-family: "Helvetica Regular", helvetica-regular, sans-serif !important;
+  color: red !important; }
 
 footer,
 header {
