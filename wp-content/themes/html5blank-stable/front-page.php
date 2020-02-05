@@ -51,7 +51,8 @@
                 <?php 
                             $logoAlt = get_field('logoAlt');
                             if( !empty( $logo ) ): ?>
-                <img id="logoAlt" class="hideIcon" src="<?php echo esc_url($logoAlt['url']); ?>" alt="<?php echo esc_attr($logoAlt['alt']); ?>" />
+                <img id="logoAlt" class="hideIcon" src="<?php echo esc_url($logoAlt['url']); ?>"
+                    alt="<?php echo esc_attr($logoAlt['alt']); ?>" />
                 <?php endif; ?>
 
                 <span class="mobileHide"><a href="#About">À propos</a></span>
@@ -74,8 +75,24 @@
                             </g>
                         </g>
                     </svg>
-                    <svg id="menuClose" class="hideIcon" onclick="toggleMenu()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382.2 381.38"><defs><style>.cls-1{isolation:isolate;}</style></defs><title>432_assets</title><g id="_2" data-name=" 2" class="cls-1"><g class="cls-1"><path d="M222.48,189.79,377.2,344.5,345.72,376,191,221.27,36.3,376,4.83,344.5,159.54,189.79,4.83,35.08,36.3,3.6,191,158.32,345.72,3.6,377.2,35.08Z"/></g></g></svg>
-                
+                    <svg id="menuClose" class="hideIcon" onclick="toggleMenu()" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 382.2 381.38">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    isolation: isolate;
+                                }
+                            </style>
+                        </defs>
+                        <title>432_assets</title>
+                        <g id="_2" data-name=" 2" class="cls-1">
+                            <g class="cls-1">
+                                <path
+                                    d="M222.48,189.79,377.2,344.5,345.72,376,191,221.27,36.3,376,4.83,344.5,159.54,189.79,4.83,35.08,36.3,3.6,191,158.32,345.72,3.6,377.2,35.08Z" />
+                            </g>
+                        </g>
+                    </svg>
+
                 </span>
                 <span class="mobileHide" id="switchContainer"><svg id="switchIcon" onclick="toggleYellow()"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388.2 381.38">
@@ -125,244 +142,245 @@
                                 <th class="mobile">T. +33 6 33 77 82 64</th>
                                 <th><a href="mailto:contact@432.archi">M. contact@432.archi</a></th>
                             </tr>
-                            </table>
+                        </table>
                     </div>
-            
-            </div>
-        </div>
 
-        <!----------------------------------------------------
+                </div>
+            </div>
+
+            <!----------------------------------------------------
                     ------------------ Homepage Hero ---------------------
                     ------------------------------------------------------>
-        <div id="heroContainer">
-            <div class="content">
-                <?php 
+            <div id="heroContainer">
+                <div class="content">
+                    <?php 
                             $image = get_field('headerhero');
                             if( !empty( $image ) ): ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php endif; ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
 
-        <!----------------------------------------------------
+            <!----------------------------------------------------
                     ------------------ Homepage Hero Mobile---------------
                     ------------------------------------------------------>
-        <div id="heroMobileContainer">
-            <div class="content">
-                <?php 
+            <div id="heroMobileContainer">
+                <div class="content">
+                    <?php 
                             $imagemobile = get_field('headerheromobile');
                             if( !empty( $imagemobile ) ): ?>
-                <img src="<?php echo esc_url($imagemobile['url']); ?>"
-                    alt="<?php echo esc_attr($imagemobile['alt']); ?>" />
-                <?php endif; ?>
+                    <img src="<?php echo esc_url($imagemobile['url']); ?>"
+                        alt="<?php echo esc_attr($imagemobile['alt']); ?>" />
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
 
 
-        <!----------------------------------------------------
+            <!----------------------------------------------------
                     ------------------ Homepage Description ---------------------
                     ------------------------------------------------------>
-        <div id="descContainer">
-            <div class="content" id="About">
-                <?php echo the_field('description'); ?>
+            <div id="descContainer">
+                <div class="content" id="About">
+                    <?php echo the_field('description'); ?>
+                </div>
             </div>
-        </div>
 
-        <!--- Box -->
-        <div id="blackBox">
-            <div class="content" id="Team">
-                <?php $imagecontenu = get_field('image_contenu');
+            <!--- Box -->
+            <div id="blackBox">
+                <div class="content" id="Team">
+                    <?php $imagecontenu = get_field('image_contenu');
                     if( !empty( $imagecontenu ) ): ?>
-                <img src="<?php echo esc_url($imagecontenu['url']); ?>" alt="<?php echo esc_attr($imagecontenu['alt']); ?>" />
-                <?php endif; ?>
+                    <img src="<?php echo esc_url($imagecontenu['url']); ?>"
+                        alt="<?php echo esc_attr($imagecontenu['alt']); ?>" />
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
-       
-        <!----------------------------------------------------
+
+            <!----------------------------------------------------
                     ------------------ Homepage Team ---------------------
                     ------------------------------------------------------>
-        <div id="teamContainer">
-            <div class="content" >
+            <div id="teamContainer">
+                <div class="content">
 
-                <div class="title">
-                    <h2>Équipe</h2>
-                </div>
+                    <div class="title">
+                        <h2>Équipe</h2>
+                    </div>
 
-                <!--liste !-->
-                <table id="teamList">
-                    <?php
+                    <!--liste !-->
+                    <table id="teamList">
+                        <?php
                                     if( have_rows('equipe') ):
                                         while ( have_rows('equipe') ) : the_row(); ?>
-                    <tr>
-                        <th class="member"><?php echo the_sub_field('prenom'); ?> <?php echo the_sub_field('nom'); ?>
-                        </th>
-                        <th class="role"> <?php echo the_sub_field('role'); ?> </th>
-                    </tr>
-                    <?php
+                        <tr>
+                            <th class="member"><?php echo the_sub_field('prenom'); ?>
+                                <?php echo the_sub_field('nom'); ?>
+                            </th>
+                            <th class="role"> <?php echo the_sub_field('role'); ?> </th>
+                        </tr>
+                        <?php
                                     endwhile;
                                     else :
                                         // no rows found
                                     endif;
                                 ?>
-                </table>
-                <!-- -->
+                    </table>
+                    <!-- -->
 
+                </div>
             </div>
-        </div>
 
-        <!----------------------------------------------------
+            <!----------------------------------------------------
                     ------------------ Homepage Projets ---------------
                     ------------------------------------------------------>
-        <div id="projContainer">
-            <div class="content" >
-                <!--tableau !-->
+            <div id="projContainer">
+                <div class="content">
+                    <!--tableau !-->
 
-                <div class="title">
-                    <h2>Projets</h2>
-                </div>
+                    <div class="title">
+                        <h2>Projets</h2>
+                    </div>
 
-                <table id="projTable">
-                    <thead>
-                        <tr id="tableHead">
-                            <th>Projets</th>
-                            <th class="hide">Programme</th>
-                            <th class="hide">Maîtrise d'ouvrage</th>
-                            <th class="hide">Surface</th>
-                            <th class="hide"></th>
-                            <th class="">Phase</th>
-                            <th class="hide">Equipe</th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
+                    <table id="projTable">
+                        <thead>
+                            <tr id="tableHead">
+                                <th>Projets</th>
+                                <th class="hide">Programme</th>
+                                <th class="hide">Maîtrise d'ouvrage</th>
+                                <th class="hide">Surface</th>
+                                <th class="hide"></th>
+                                <th class="">Phase</th>
+                                <th class="hide">Equipe</th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
 
-                        </tr>
-                    </thead>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <?php
+                        <tbody>
+                            <?php
                                     if( have_rows('projets') ):
                                         while ( have_rows('projets') ) : the_row(); ?>
-                        <tr>
-                            <th><?php echo the_sub_field('projets'); ?> </th>
-                            <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
-                            <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
-                            <th class="hide" colspan="2" class="surfaceField"><?php echo the_sub_field('surface'); ?></th>
-                            <th class=""><?php echo the_sub_field('phase'); ?> </th>
-                            <th class="hide" colspan="6"><?php echo the_sub_field('equipe'); ?> </th>
+                            <tr>
+                                <th><?php echo the_sub_field('projets'); ?> </th>
+                                <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
+                                <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
+                                <th class="hide surfaceField" colspan="2">
+                                    <?php echo the_sub_field('surface'); ?></th>
+                                <th class=""><?php echo the_sub_field('phase'); ?> </th>
+                                <th class="hide" colspan="6"><?php echo the_sub_field('equipe'); ?> </th>
 
-                        </tr>
-                        <?php
+                            </tr>
+                            <?php
                                             endwhile;
                                             else :
                                                 // no rows found
                                             endif;
                                         ?>
 
-                    </tbody>
-                </table>
-                <!-- -->
+                        </tbody>
+                    </table>
+                    <!-- -->
 
+                </div>
             </div>
-        </div>
-        <!--END CONTENT CONTAINER -->
+            <!--END CONTENT CONTAINER -->
 
-        <!----------------------------------------------------
+            <!----------------------------------------------------
                     ------------------ Homepage References ---------------
                     ------------------------------------------------------>
-        <div id="refsContainer">
-            <div class="content" id="Refs">
-                <!--tableau !-->
+            <div id="refsContainer">
+                <div class="content" id="Refs">
+                    <!--tableau !-->
 
-                <div class="title">
-                    <h2>Références chez AIA Architectes</h2>
-                </div>
+                    <div class="title">
+                        <h2>Références chez AIA Architectes</h2>
+                    </div>
 
-                <table id="refsTable">
-                    <thead>
-                        <tr id="tableHead">
-                            <th>Projets</th>
-                            <th class="hide">Programme</th>
-                            <th class="hide">Maîtrise d'ouvrage</th>
-                            <th class="hide" id="surface">Surface</th>
-                            <th class="">Livraison</th>
-                            <th class="hide">Mission</th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                            <th class="hide"></th>
-                        </tr>
-                    </thead>
+                    <table id="refsTable">
+                        <thead>
+                            <tr id="tableHead">
+                                <th>Projets</th>
+                                <th class="hide">Programme</th>
+                                <th class="hide">Maîtrise d'ouvrage</th>
+                                <th class="hide" id="surface">Surface</th>
+                                <th class="">Livraison</th>
+                                <th class="hide">Mission</th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                                <th class="hide"></th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <?php
+                        <tbody>
+                            <?php
                                     if( have_rows('references') ):
                                         while ( have_rows('references') ) : the_row(); ?>
-                        <tr>
-                            <th><?php echo the_sub_field('projets'); ?> </th>
-                            <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
-                            <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
-                            <th class="hide" class="surfaceRefField"><?php echo the_sub_field('surface'); ?></th>
-                            <th class=""><?php echo the_sub_field('livraison'); ?> </th>
-                            <th class="hide" colspan="6"><?php echo the_sub_field('mission'); ?> </th>
+                            <tr>
+                                <th><?php echo the_sub_field('projets'); ?> </th>
+                                <th class="hide"><?php echo the_sub_field('programme'); ?> </th>
+                                <th class="hide"><?php echo the_sub_field('maitrise_douvrage');?></th>
+                                <th class="hide surfaceRefField"><?php echo the_sub_field('surface'); ?></th>
+                                <th class=""><?php echo the_sub_field('livraison'); ?> </th>
+                                <th class="hide" colspan="6"><?php echo the_sub_field('mission'); ?> </th>
 
-                        </tr>
-                        <?php
+                            </tr>
+                            <?php
                                             endwhile;
                                             else :
                                                 // no rows found
                                             endif;
                                         ?>
 
-                    </tbody>
-                </table>
-                <!-- -->
+                        </tbody>
+                    </table>
+                    <!-- -->
 
+                </div>
             </div>
+
+            <div id="coordinatesContainer">
+                <table id="coordinatesList">
+                    <tr>
+                        <th>284 Rue de Créqui,</th>
+                        <th class="mobile">69007 Lyon</th>
+                        <th class="hidetab">T. +33 6 33 77 82 64</th>
+                        <th class="mobile">&nbsp;</th>
+                    </tr>
+
+                    <tr>
+                        <th class="hidetab">69007 Lyon</th>
+                        <th class="mobile">T. +33 6 33 77 82 64</th>
+                        <th><a href="mailto:contact@432.archi">M. contact@432.archi</a></th>
+                    </tr>
+                    <table>
+            </div>
+
+            <!--END CONTENT CONTAINER -->
         </div>
 
-        <div id="coordinatesContainer">
-            <table id="coordinatesList">
-                <tr>
-                    <th>284 Rue de Créqui,</th>
-                    <th class="mobile">69007 Lyon</th>
-                    <th class="hidetab">T. +33 6 33 77 82 64</th>
-                    <th class="mobile">&nbsp;</th>
-                </tr>
 
-                <tr>
-                    <th class="hidetab">69007 Lyon</th>
-                    <th class="mobile">T. +33 6 33 77 82 64</th>
-                    <th><a href="mailto:contact@432.archi">M. contact@432.archi</a></th>
-                </tr>
-                <table>
-        </div>
-
-        <!--END CONTENT CONTAINER -->
-    </div>
-
-
-    <?php get_footer(); ?>
+        <?php get_footer(); ?>
 
     </div>
     <script>
+    
+        var surface = document.getElementsByClassName('surfaceField');
+        console.log(surface);
 
-    var surface = document.getElementsByClassName('surfaceField');
-    for(var i = 0; i < surface.length; i++)
-    {
-        surface[i].innerHTML = surface[i].innerHTML.replace('²', '<span class="exposant-type">²</span>');
-    }
-   
-    var surfaceRef = document.getElementsByClassName('surfaceRefField');
-    for(var i = 0; i < surfaceRef.length; i++)
-    {
-         surfaceRef[i].innerHTML = surfaceRef[i].innerHTML.replace('²', '<span class="exposant-type">²</span>');
-    }
+        for (var i = 0; i < surface.length; i++) {
+            surface[i].innerHTML = surface[i].innerHTML.replace('²', '<span class="exposant-type">²</span>');
+        }
 
-    console.log(surface);
-    console.log(surfaceRef);
+        var surfaceRef = document.getElementsByClassName('surfaceRefField');
+        for (var i = 0; i < surfaceRef.length; i++) {
+            console.log(surfaceRef[i]);
+            surfaceRef[i].innerHTML = surfaceRef[i].innerHTML.replace('²', '<span class="exposant-type">²</span>');
+        }
 
         function toggleYellow() {
             var target = document.getElementById("switchIcon");
@@ -389,8 +407,6 @@
             logo.classList.toggle("hideIcon");
             logoAlt.classList.toggle("hideIcon");
         }
-
-
     </script>
 </body>
 
