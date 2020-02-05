@@ -349,17 +349,16 @@
     </div>
     <script>
 
-
     var surface = document.getElementsByClassName('surfaceField');
     for(var i = 0; i < surface.length; i++)
     {
-        surface[i].innerHTML = surface.innerHTML.replace('²', '<span class="exposant-type">²</span>');
+        surface[i].innerHTML = surface[i].innerHTML.replace('²', '<span class="exposant-type">²</span>');
     }
    
     var surfaceRef = document.getElementsByClassName('surfaceRefField');
     for(var i = 0; i < surfaceRef.length; i++)
     {
-         surfaceRef.innerHTML = surfaceRef.innerHTML.replace('²', '<span class="exposant-type">²</span>');
+         surfaceRef[i].innerHTML = surfaceRef[i].innerHTML.replace('²', '<span class="exposant-type">²</span>');
     }
 
     console.log(surface);
