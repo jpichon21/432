@@ -19,16 +19,16 @@
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define( 'DB_NAME', 'archirylitsitedb' );
+define( 'DB_NAME', 'archirylitdbws' );
 
 /** Utilisateur de la base de données MySQL. */
-define( 'DB_USER', 'archirylitsitedb' );
+define( 'DB_USER', 'archirylitdbws' );
 
 /** Mot de passe de la base de données MySQL. */
-define( 'DB_PASSWORD', 'aE27ks5JQ' );
+define( 'DB_PASSWORD', '57tx5eSL49AFQst' );
 
 /** Adresse de l’hébergement MySQL. */
-define( 'DB_HOST', 'archirylitsitedb.mysql.db' );
+define( 'DB_HOST', 'archirylitdbws.mysql.db' );
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
