@@ -145,9 +145,12 @@ body::-webkit-scrollbar {
 #switchContainerMobile {
   position: fixed;
   z-index: 10;
-  height: 90px;
-  width: 90px;
-  top: calc(100vh - 55px);
+  /*height: 90px;
+    width: 90px;
+    top: calc(100vh - 55px);*/
+  height: 50px;
+  width: 50px;
+  bottom: 0;
   left: 18px; }
   @media (min-width: 436px) {
     #switchContainerMobile {
